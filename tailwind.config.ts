@@ -8,13 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      container:
-      {
-        center: true,
-        padding: "15px"
-      },
       colors: {
-       accent: "#A8DADC"
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },

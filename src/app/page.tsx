@@ -1,34 +1,22 @@
-"use client";
+"use client"
 
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
-import About from "@/components/About";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
-import { useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      easing: "ease-out-back",
-      duration: 1200,
-      delay: 100,
-      mirror: true,
-      anchorPlacement: "bottom-bottom",
-      offset: 160,
-    });
-    AOS.refresh();
-  }, []);
+  const router = useRouter();
   return (
-    <main>
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-      <About />
-    </main>
+    <div>
+      <h1 className="bg-blue-200">Basic Routing</h1>
+      <br />
+      <Link href="contact" >Contact Us</Link>
+      <br />
+      <Link href="about" >About Us</Link>
+      <br />
+      <Link href="navbar" >navbar</Link>
+      <br />
+      <button className="bg-blue-200 rounded-md p-1" onClick={()=>router.push("/login")}>Login</button>
+    </div>
   );
 }
